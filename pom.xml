@@ -9,10 +9,10 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.cbcode</groupId>
-    <artifactId>Car_Management</artifactId>
+    <artifactId>CarManagement</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>Car_Management</name>
-    <description>Car_Management</description>
+    <name>CarManagement</name>
+    <description>CarManagement</description>
     <properties>
         <java.version>17</java.version>
     </properties>
