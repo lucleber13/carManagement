@@ -17,6 +17,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
@@ -30,9 +31,9 @@ public class AuthController {
     UserRepository userRepository;
     @Autowired
     RoleRepository roleRepository;
-    @Autowired
+
     PasswordEncoder encoder;
-    @Autowired
+
     AuthenticationManager authenticationManager;
     @Autowired
     JwtTokenUtil jwtTokenUtil;
@@ -63,7 +64,7 @@ public class AuthController {
             return ResponseEntity.badRequest().body("Email is already taken");
         }
         User user = new User();
-        Set<Role> roles = new HashSet<Role>();
+        Set<Role> roles = new HashSet<>();
         user.setUserName(signupRequest.getUserName());
         user.setEmail(signupRequest.getEmail());
         user.setPassword(encoder.encode(signupRequest.getPassword()));
